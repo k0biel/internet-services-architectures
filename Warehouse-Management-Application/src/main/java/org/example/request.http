@@ -1,0 +1,26 @@
+### Creating a new warehouse
+POST http://localhost:8081/warehouses
+Content-Type: application/json
+
+{
+  "name": "New Warehouse",
+  "location": "New Location"
+}
+
+### Retrieving all warehouses
+GET http://localhost:8081/warehouses
+
+### Retrieving a warehouse by ID
+GET http://localhost:8081/warehouses/11111111-1111-1111-1111-111111111111
+
+### Updating a warehouse by ID
+PUT http://localhost:8081/warehouses/11111111-1111-1111-1111-111111111111
+Content-Type: application/json
+
+{
+  "name": "Updated Warehouse",
+  "location": "Updated Location"
+}
+
+### Deleting a warehouse by ID
+DELETE http://localhost:8081/warehouses/7420f092-7290-4954-99c3-aa1721351e01
