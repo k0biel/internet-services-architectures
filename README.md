@@ -1,4 +1,4 @@
-# Internet Services Architectures - Laboratories | Gdańsk University of Technology 2023/2024
+# Internet Services Architectures - Laboratories | Gdańsk University of Technology 2024/2025
 
 ## Overview
 
