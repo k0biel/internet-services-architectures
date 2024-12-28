@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Materials</h2>
+  <ul>
+    <li *ngFor="let material of materials()">
+      {{ material.name }}
+      <button (click)="deleteMaterial(material.id)">Delete</button>
+      <button (click)="toggleEditMaterialForm(material)">Edit</button>
+      <button (click)="showDetails(material)">Details</button>
+    </li>
+  </ul>
+  <button (click)="toggleAddMaterialForm()">Add Material</button>
+  <div *ngIf="showAddMaterialForm">
+    <h3>Add Material</h3>
+    <form (ngSubmit)="addMaterial()">
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="newMaterial.name" name="name" required>
+      <label for="price">Price:</label>
+      <input id="price" [(ngModel)]="newMaterial.price" name="price" required>
+      <label for="warehouseId">Warehouse ID:</label>
+      <input id="warehouseId" [(ngModel)]="newMaterial.warehouseId" name="warehouseId" required>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <div *ngIf="showEditMaterialForm">
+    <h3>Edit Material</h3>
+    <form (ngSubmit)="updateMaterial()">
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="selectedMaterial!.name" name="name" required>
+      <label for="price">Price:</label>
+      <input id="price" [(ngModel)]="selectedMaterial!.price" name="price" required>
+      <label for="warehouseId">Warehouse ID:</label>
+      <input id="warehouseId" [(ngModel)]="selectedMaterial!.warehouseId" name="warehouseId" required>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  <div *ngIf="selectedMaterial">
+    <h3>Material Details</h3>
+    <p>ID: {{ selectedMaterial.id }}</p>
+    <p>Name: {{ selectedMaterial.name }}</p>
+    <p>Price: {{ selectedMaterial.price }}</p>
+    <p>Warehouse ID: {{ selectedMaterial.warehouseId }}</p>
+  </div>
+</div>
