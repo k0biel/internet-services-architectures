@@ -1,0 +1,32 @@
+### Creating a new material for a warehouse
+POST http://localhost:8082/materials/cf434ca6-b0f0-40bd-beee-b8f3bbaabf76
+Content-Type: application/json
+
+{
+  "name": "New Material",
+  "price": 100.0
+}
+
+### Retrieving a material by ID
+GET http://localhost:8082/materials/9f36e5d1-466a-4f91-be76-7eb6f56ce00a
+
+### Retrieving all materials
+GET http://localhost:8082/materials
+
+### Updating a material by ID
+PUT http://localhost:8082/materials/f2f91b69-4ef4-4670-a328-2690d6bfdf8f
+Content-Type: application/json
+
+{
+  "name": "Updated Material",
+  "price": 120.0
+}
+
+### Deleting a material by ID
+DELETE http://localhost:8082/materials/84f9d4cd-044b-4fca-b014-cb516e1cbf3c
+
+### Retrieving all warehouses
+GET http://localhost:8082/warehouses
+
+### Retrieving materials by warehouse ID
+GET http://localhost:8082/materials/warehouse/22222222-2222-2222-2222-222222222222
