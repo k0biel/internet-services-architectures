@@ -18,6 +18,8 @@ This repository contains the laboratory project for the "Internet Services Archi
 - **Spring Data JPA**: For database interactions in the Material-Management-Application and Warehouse-Management-Application.
 - **H2 Database**: An in-memory database used for development and testing.
 - **Lombok**: A Java library that helps to reduce boilerplate code.
+- **Docker**: Used to containerize applications.
+- **Docker Compose**: Manages multiple containers.
 
 ### Frontend
 
@@ -50,6 +52,37 @@ This repository contains the laboratory project for the "Internet Services Archi
 - **Port**: 4200
 - **Description**: Provides a user interface for managing warehouses and materials.
 
+## Dockerization
+
+Each application has been containerized using Docker, allowing for easy deployment and management. Below are the configurations:
+
+### Docker Containers
+
+- **Web-Application**: Built on NGINX, serves the Angular frontend.
+- **Gateway-Application**: Uses Eclipse Temurin as the base image and manages API gateway functionality.
+- **Material-Management-Application**: Uses Eclipse Temurin as the base image and handles materials-related operations.
+- **Warehouse-Management-Application**: Uses Eclipse Temurin as the base image and manages warehouses.
+
+### Docker Compose Configuration
+
+A `docker-compose.yml` file has been created to manage all services. It:
+
+- Defines all four applications as services.
+- Exposes necessary ports.
+- Configures environment variables for each container.
+
+To start the project using Docker Compose, run:
+
+```sh
+docker-compose up --build
+```
+
+To stop the containers, use:
+
+```sh
+docker-compose down
+```
+
 ## Getting Started
 
 ### Prerequisites
@@ -57,18 +90,19 @@ This repository contains the laboratory project for the "Internet Services Archi
 - **Java 17**
 - **Node.js and npm**
 - **Maven**
+- **Docker & Docker Compose**
 
 ### Accessing the Application
 
-- **Frontend**: Open your browser and navigate to [http://localhost:4200/].
-- **Gateway**: The gateway routes can be accessed via [http://localhost:8085/].
+- **Frontend**: Open your browser and navigate to [http\://localhost:4200/].
+- **Gateway**: The gateway routes can be accessed via [http\://localhost:8085/].
 
 ## API Endpoints
 
 ### Gateway-Application
 
-- **Warehouse Management**: [http://localhost:8085/warehouses]
-- **Material Management**: [http://localhost:8085/materials]
+- **Warehouse Management**: [http\://localhost:8085/warehouses]
+- **Material Management**: [http\://localhost:8085/materials]
 
 ### Material-Management-Application
 
