@@ -19,19 +19,18 @@ public class MaterialCommunicationService {
     }
 
     public void notifyMaterialsToDelete(UUID warehouseId) {
-        restTemplate.delete("http://localhost:8082/materials/warehouse/" + warehouseId);
+        restTemplate.delete("http://material-application:8082/materials/warehouse/" + warehouseId);
     }
 
     public void notifyMaterialsAboutNewWarehouse(Warehouse warehouse) {
-        String url = "http://localhost:8082/materials/warehouse/" + warehouse.getId();
+        String url = "http://material-application:8082/materials/warehouse/" + warehouse.getId();
         WarehouseSummaryDTO dto = WarehouseSummaryDTO.from(warehouse);
         restTemplate.postForObject(url, dto, Void.class);
     }
 
     public void notifyMaterialsAboutUpdatedWarehouse(Warehouse warehouse) {
-        String url = "http://localhost:8082/materials/warehouse/" + warehouse.getId();
+        String url = "http://material-application:8082/materials/warehouse/" + warehouse.getId();
         WarehouseSummaryDTO dto = WarehouseSummaryDTO.from(warehouse);
         restTemplate.put(url, dto);
     }
-
 }
