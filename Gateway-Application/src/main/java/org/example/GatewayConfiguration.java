@@ -16,11 +16,11 @@ public class GatewayConfiguration {
         return builder.routes()
                 .route("Warehouse-Management-Application", r -> r
                         .path("/warehouses/**")
-                        .uri("http://localhost:8081"))
+                        .uri("http://warehouse-application:8081"))
 
                 .route("Material-Management-Application", r -> r
                         .path("/materials/**")
-                        .uri("http://localhost:8082"))
+                        .uri("http://material-application:8082"))
                 .build();
     }
 
